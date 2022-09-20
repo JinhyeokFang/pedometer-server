@@ -1,8 +1,12 @@
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import serverlessExpress from '@vendia/serverless-express';
+import { Callback, Context, Handler } from 'aws-lambda';
 import helmet from 'helmet';
 import { AppModule } from './app.module';
+
+let server: Handler;
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
@@ -18,6 +22,17 @@ async function bootstrap() {
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api', app, document);
 
-    await app.listen(configService.get<string>('PORT'));
+    await app.init();
+
+    const expressApp = app.getHttpAdapter().getInstance();
+    return serverlessExpress({ app: expressApp });
 }
-bootstrap();
+
+export const handler: Handler = async (
+    event: any,
+    context: Context,
+    callback: Callback,
+) => {
+    server = server ?? (await bootstrap());
+    return server(event, context, callback);
+};
