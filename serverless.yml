@@ -1,3 +1,5 @@
+org: jinhyeokfang
+app: pedometer
 service: pedometer-serverless
 
 plugins:
@@ -17,3 +19,7 @@ functions:
       - http:
           method: ANY
           path: '{proxy+}'
+custom:
+  apigwBinary:
+    types: 
+      - '*/*'

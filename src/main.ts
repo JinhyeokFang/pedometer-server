@@ -25,7 +25,10 @@ async function bootstrap() {
     await app.init();
 
     const expressApp = app.getHttpAdapter().getInstance();
-    return serverlessExpress({ app: expressApp });
+    return serverlessExpress({
+        app: expressApp,
+        binaryMimeTypes: ['image/svg+xml'],
+    });
 }
 
 export const handler: Handler = async (
