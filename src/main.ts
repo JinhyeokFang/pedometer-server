@@ -1,12 +1,14 @@
 import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import helmet from 'helmet';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
     const app = await NestFactory.create(AppModule);
+    app.enableCors();
+    app.use(helmet());
     const configService: ConfigService = app.get(ConfigService);
-
 
     const config = new DocumentBuilder()
         .setTitle('Pedometer Server')
@@ -15,6 +17,7 @@ async function bootstrap() {
         .build();
     const document = SwaggerModule.createDocument(app, config);
     SwaggerModule.setup('api', app, document);
+
     await app.listen(configService.get<string>('PORT'));
 }
 bootstrap();
