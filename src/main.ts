@@ -27,7 +27,7 @@ async function bootstrap() {
     const expressApp = app.getHttpAdapter().getInstance();
     return serverlessExpress({
         app: expressApp,
-        binaryMimeTypes: ['image/svg+xml'],
+        binaryMimeTypes: ['image/svg+xml', 'application/json'],
     });
 }
 
