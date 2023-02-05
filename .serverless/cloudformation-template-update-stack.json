@@ -207,7 +207,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pedometer-serverless/dev/1675608736921-2023-02-05T14:52:16.921Z/pedometer-serverless.zip"
+          "S3Key": "serverless/pedometer-serverless/dev/1675609125653-2023-02-05T14:58:45.653Z/pedometer-serverless.zip"
         },
         "Handler": "s_main.handler",
         "Runtime": "nodejs14.x",
@@ -225,14 +225,14 @@
         "MainLogGroup"
       ]
     },
-    "MainLambdaVersionIf4zswtyPbK4YbTzrTPyxs4kHMNQBkwfFPEVQfic": {
+    "MainLambdaVersionrOCPkuQXEvI5ZpASDO2HUEJg0p3p61ucIFMlCRp8": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "MainLambdaFunction"
         },
-        "CodeSha256": "Mds5mMOPuajRiSgQOBQer/n5x55j6v3tMdXHNYvEYQ8="
+        "CodeSha256": "UyT1ph3uCceElpc/CafgBoAOQ02TbTudAaj8jMeabuc="
       }
     },
     "ApiGatewayRestApi": {
@@ -357,7 +357,7 @@
         "MainLambdaPermissionApiGateway"
       ]
     },
-    "ApiGatewayDeployment1675608680586": {
+    "ApiGatewayDeployment1675609075085": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
         "RestApiId": {
@@ -516,7 +516,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/pedometer-serverless/dev/1675608736921-2023-02-05T14:52:16.921Z/custom-resources.zip"
+          "S3Key": "serverless/pedometer-serverless/dev/1675609125653-2023-02-05T14:58:45.653Z/custom-resources.zip"
         },
         "FunctionName": "pedometer-serverless-dev-custom-resource-apigw-cw-role",
         "Handler": "api-gateway-cloud-watch-role/handler.handler",
@@ -578,7 +578,7 @@
     "MainLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "MainLambdaVersionIf4zswtyPbK4YbTzrTPyxs4kHMNQBkwfFPEVQfic"
+        "Ref": "MainLambdaVersionrOCPkuQXEvI5ZpASDO2HUEJg0p3p61ucIFMlCRp8"
       },
       "Export": {
         "Name": "sls-pedometer-serverless-dev-MainLambdaFunctionQualifiedArn"
