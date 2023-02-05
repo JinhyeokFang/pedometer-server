@@ -56,9 +56,9 @@ export class CountController {
                     </linearGradient>
                 </defs>
                 <rect id="background" fill="url(#background)" x="10" y="10" width="150" height="45" style="filter: drop-shadow( 0 0 2px rgba(0, 0, 0, .7));" rx="10" ry="10"></rect>
-                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 10px;" x="25" y="30">사이트를 방문한 방문자수</text>
-                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 10px;" x="25" y="45">${counts.length}</text>
-                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 4px;" x="25" y="52">Pedometer by JinhyeokFang</text>
+                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 10px;" x="25" y="28">사이트 방문자수</text>
+                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 10px;" x="25" y="40">${counts.length}</text>
+                <text style="white-space: pre; fill: white; font-family: Nanum Gothic, sans-serif; font-size: 3px;" x="25" y="45">Pedometer by JinhyeokFang</text>
             </svg>
         `,
         );
